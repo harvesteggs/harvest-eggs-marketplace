@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Harvest Eggs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="marketplace.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="top-left">
+                        <span>🚚 Free shipping on orders over $50</span>
+                    </div>
+                    <div class="top-right">
+                        <span>📞 1-800-HARVEST</span>
+                        <span>✉️ support@harvesteggs.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <a href="index.html" class="logo-link">
+                            <h1 class="logo">🥚 Harvest Eggs</h1>
+                            <div class="tagline">Premium Farm Fresh Marketplace</div>
+                        </a>
+                    </div>
+                    
+                    <div class="search-section">
+                        <div class="search-container">
+                            <input type="text" id="searchInput" class="search-input" placeholder="Search for eggs, supplies, and more...">
+                            <button class="search-btn">🔍</button>
+                        </div>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button id="cartBtn" class="cart-btn">
+                            🛒 Cart <span id="cartCount">0</span> <span id="cartTotal">$0.00</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="category-nav">
+                        <select id="categorySelect" class="category-select">
+                            <option value="consumption_eggs">Fresh Eggs</option>
+                            <option value="hatching_eggs">Hatching Eggs</option>
+                            <option value="balut">Balut</option>
+                            <option value="pickled_eggs">Pickled Eggs</option>
+                            <option value="shipping_supplies">Shipping Supplies</option>
+                            <option value="all" selected>All Products</option>
+                        </select>
+                    </div>
+                    
+                    <div class="nav-features">
+                        <span class="feature">🥚 Fresh Eggs</span>
+                        <span class="feature">🚚 Fast Delivery</span>
+                        <span class="feature">🛡️ Quality Guaranteed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span class="separator">›</span>
+                <a href="marketplace.html">Marketplace</a>
+                <span class="separator">›</span>
+                <span class="current">All Products</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Loading State -->
+            <div id="loading" class="loading" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Loading all products...</p>
+            </div>
+            
+            <!-- Results Header -->
+            <div class="results-header">
+                <h1 id="categoryTitle">All Products</h1>
+                <p id="resultsCount">Loading...</p>
+                <p class="page-description">Browse our complete collection of premium eggs, hatching eggs, specialty products, and shipping supplies.</p>
+            </div>
+            
+            <!-- Category Filter Buttons -->
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="consumption_eggs">Fresh Eggs</button>
+                <button class="filter-btn" data-category="hatching_eggs">Hatching Eggs</button>
+                <button class="filter-btn" data-category="balut">Balut</button>
+                <button class="filter-btn" data-category="pickled_eggs">Pickled Eggs</button>
+                <button class="filter-btn" data-category="shipping_supplies">Shipping Supplies</button>
+            </div>
+            
+            <!-- Product Grid -->
+            <div id="productGrid" class="product-grid">
+                <!-- Products will be loaded here -->
+            </div>
+            
+            <!-- No Products Message -->
+            <div id="noProducts" class="no-products" style="display: none;">
+                <div class="no-products-icon">🥚</div>
+                <h3>No products found</h3>
+                <p>No products match your current search or filter criteria.</p>
+                <button onclick="clearFilters()" class="btn-primary">Clear Filters</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar" style="display: none;">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button onclick="hideCartSidebar()" class="close-btn">×</button>
+        </div>
+        <div class="cart-content">
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: <span id="sidebarCartTotal">$0.00</span></strong>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🥚 Harvest Eggs</h4>
+                    <p>Revolutionizing the egg industry through direct farmer-to-consumer connections.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="marketplace.html">Fresh Eggs</a></li>
+                        <li><a href="marketplace.html?category=hatching_eggs">Hatching Eggs</a></li>
+                        <li><a href="marketplace.html?category=pickled_eggs">Pickled Eggs</a></li>
+                        <li><a href="marketplace.html?category=shipping_supplies">Shipping Supplies</a></li>
+                        <li><a href="all-products.html">All Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#problems">Industry Problems</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="#">Become a Seller</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Harvest Eggs. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="all-products.js"></script>
+</body>
+</html>
+

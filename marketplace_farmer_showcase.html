@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - Harvest Eggs</title>
+    <link rel="stylesheet" href="marketplace_farmer_showcase.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <span>Supporting American farmers since 2024</span>
+            <span>admin@harvesteggs.com</span>
+        </div>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index_professional.html">
+                    <h1>Harvest Eggs</h1>
+                    <p>Back to the Basics of True Farm Fresh</p>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index_professional.html">Home</a>
+                <a href="marketplace_farmer_showcase.html" class="active">Marketplace</a>
+                <a href="about_fixed.html">About</a>
+                <a href="contact_fixed.html">Contact</a>
+                <a href="marketplace_farmer_showcase.html" class="cta-btn">Shop Now</a>
+            </div>
+        </nav>
+        
+        <!-- Search Bar -->
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for farmers, products, and farm stories..." class="search-input">
+                <button class="search-btn">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="index_professional.html">Home</a> > <span id="breadcrumbCategory">Fresh Eggs</span>
+        </div>
+
+        <div class="marketplace-container">
+            <!-- Clean Sidebar Navigation -->
+            <aside class="sidebar">
+                <div class="category-section">
+                    <h3>Categories</h3>
+                    
+                    <!-- Main Category Buttons -->
+                    <div class="main-categories">
+                        <button class="category-btn active" data-category="fresh-eggs">Fresh Eggs</button>
+                        <button class="category-btn" data-category="hatching-eggs">Hatching Eggs</button>
+                        <button class="category-btn" data-category="supplies">Supplies</button>
+                        <button class="category-btn" data-category="balut">Balut</button>
+                    </div>
+                    
+                    <!-- Hatching Eggs Sub-Menu -->
+                    <div id="hatchingSubMenu" class="sub-menu" style="display: none;">
+                        <h4>Hatching Egg Types</h4>
+                        <button class="sub-category-btn" data-subcategory="chicken">Chicken</button>
+                        <button class="sub-category-btn" data-subcategory="quail">Quail</button>
+                        <button class="sub-category-btn" data-subcategory="duck">Duck</button>
+                        <button class="sub-category-btn" data-subcategory="emu">Emu</button>
+                        <button class="sub-category-btn" data-subcategory="ostrich">Ostrich</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Product Area -->
+            <section class="product-section">
+                <div class="section-header">
+                    <h2 id="categoryTitle">Fresh Eggs</h2>
+                    <p id="categoryDescription">Farm-fresh consumable eggs from local farmers. Each farmer sets their own prices and shares their unique farm story.</p>
+                    <div class="results-info">
+                        <span id="resultsCount">10 farmers offering products</span>
+                    </div>
+                </div>
+
+                <div id="productGrid" class="product-grid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Harvest Eggs</h4>
+                <p>Preserving American agricultural heritage by connecting farming families with communities that value authentic nutrition and sustainable practices. We serve as a connector between buyers and sellers.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Marketplace</h4>
+                <a href="marketplace_farmer_showcase.html?category=fresh-eggs">Fresh Eggs</a>
+                <a href="marketplace_farmer_showcase.html?category=hatching-eggs">Hatching Eggs</a>
+                <a href="marketplace_farmer_showcase.html?category=supplies">Supplies</a>
+                <a href="marketplace_farmer_showcase.html?category=balut">Balut</a>
+            </div>
+            <div class="footer-section">
+                <h4>For Farmers</h4>
+                <a href="contact_fixed.html">Join Our Marketplace</a>
+                <a href="contact_fixed.html">Farmer Resources</a>
+                <a href="contact_fixed.html">Set Your Prices</a>
+                <a href="contact_fixed.html">Share Your Story</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="contact_fixed.html">Contact Farmers</a>
+                <a href="contact_fixed.html">Marketplace Policies</a>
+                <a href="contact_fixed.html">Quality Guidelines</a>
+                <a href="contact_fixed.html">Help Center</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Harvest Eggs. Supporting American agricultural heritage. Platform connects buyers and sellers - all sales are final.</p>
+        </div>
+    </footer>
+
+    <script src="marketplace_farmer_showcase.js"></script>
+</body>
+</html>
+

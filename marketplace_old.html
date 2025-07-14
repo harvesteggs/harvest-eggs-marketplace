@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - Harvest Eggs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="marketplace.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="top-left">
+                        <span>🚚 Free shipping on orders over $50</span>
+                    </div>
+                    <div class="top-right">
+                        <span>📞 1-800-HARVEST</span>
+                        <span>✉️ support@harvesteggs.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <a href="index.html" class="logo-link">
+                            <h1 class="logo">🥚 Harvest Eggs</h1>
+                            <div class="tagline">Premium Farm Fresh Marketplace</div>
+                        </a>
+                    </div>
+                    
+                    <div class="search-section">
+                        <div class="search-container">
+                            <input type="text" id="searchInput" class="search-input" placeholder="Search for eggs, supplies, and more...">
+                            <button class="search-btn">🔍</button>
+                        </div>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button id="cartBtn" class="cart-btn">
+                            🛒 Cart <span id="cartCount">0</span> <span id="cartTotal">$0.00</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="category-nav">
+                        <select id="categorySelect" class="category-select">
+                            <option value="consumption_eggs">Fresh Eggs</option>
+                            <option value="hatching_eggs">Hatching Eggs</option>
+                            <option value="balut">Balut</option>
+                            <option value="pickled_eggs">Pickled Eggs</option>
+                            <option value="shipping_supplies">Shipping Supplies</option>
+                            <option value="all">All Products</option>
+                        </select>
+                    </div>
+                    
+                    <div class="nav-features">
+                        <span class="feature">🥚 Fresh Eggs</span>
+                        <span class="feature">🚚 Fast Delivery</span>
+                        <span class="feature">🛡️ Quality Guaranteed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Loading State -->
+            <div id="loading" class="loading" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Loading products...</p>
+            </div>
+            
+            <!-- Results Header -->
+            <div class="results-header">
+                <h1 id="categoryTitle">Fresh Eggs</h1>
+                <p id="resultsCount">Loading...</p>
+            </div>
+            
+            <!-- Product Grid -->
+            <div id="productGrid" class="product-grid">
+                <!-- Products will be loaded here -->
+            </div>
+            
+            <!-- No Products Message -->
+            <div id="noProducts" class="no-products" style="display: none;">
+                <div class="no-products-icon">🥚</div>
+                <h3>No products found</h3>
+                <p>No products available in this category.</p>
+                <button onclick="showAllProducts()" class="btn-primary">View All Products</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar" style="display: none;">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button onclick="hideCartSidebar()" class="close-btn">×</button>
+        </div>
+        <div class="cart-content">
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: <span id="sidebarCartTotal">$0.00</span></strong>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rare Breeds Section -->
+    <section class="rare-breeds-section">
+        <div class="container">
+            <h2>🦅 Rare & Heritage Breeds</h2>
+            <p>Discover exceptional rare breeds and help us expand our collection</p>
+            
+            <div id="rareBreedsGrid" class="rare-breeds-grid">
+                <div class="loading-message">Loading rare breeds...</div>
+            </div>
+            
+            <!-- Breed Request Form -->
+            <div class="breed-request-section">
+                <h3>🌟 Request a New Breed</h3>
+                <p>Don't see your breed listed? Help us expand our marketplace by suggesting new rare breeds!</p>
+                
+                <form id="breedRequestForm" class="breed-request-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="requesterName">Your Name *</label>
+                            <input type="text" id="requesterName" name="requesterName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="requesterEmail">Your Email *</label>
+                            <input type="email" id="requesterEmail" name="requesterEmail" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="breedName">Breed Name *</label>
+                            <input type="text" id="breedName" name="breedName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="animalType">Animal Type *</label>
+                            <select id="animalType" name="animalType" required>
+                                <option value="">Select animal type</option>
+                                <option value="chicken">Chicken</option>
+                                <option value="duck">Duck</option>
+                                <option value="goose">Goose</option>
+                                <option value="quail">Quail</option>
+                                <option value="turkey">Turkey</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="breedDescription">Breed Description *</label>
+                        <textarea id="breedDescription" name="breedDescription" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="countryOfOrigin">Country of Origin</label>
+                            <input type="text" id="countryOfOrigin" name="countryOfOrigin">
+                        </div>
+                        <div class="form-group">
+                            <label for="specialCharacteristics">Special Characteristics</label>
+                            <input type="text" id="specialCharacteristics" name="specialCharacteristics">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="whyAdd">Why should this breed be added?</label>
+                        <textarea id="whyAdd" name="whyAdd" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Submit Breed Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🥚 Harvest Eggs</h4>
+                    <p>Revolutionizing the egg industry through direct farmer-to-consumer connections.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="marketplace.html">Fresh Eggs</a></li>
+                        <li><a href="marketplace.html?category=hatching_eggs">Hatching Eggs</a></li>
+                        <li><a href="marketplace.html?category=pickled_eggs">Pickled Eggs</a></li>
+                        <li><a href="marketplace.html?category=shipping_supplies">Shipping Supplies</a></li>
+                        <li><a href="all-products.html">All Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#problems">Industry Problems</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="#">Become a Seller</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Harvest Eggs. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="marketplace.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Harvest Eggs</title>
+    <link rel="stylesheet" href="marketplace_fixed.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* About page specific styles */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .about-section {
+            background: white;
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-section h2 {
+            color: var(--heritage-red);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-section h3 {
+            color: var(--text-dark);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .about-section p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .mission-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .pillar {
+            text-align: center;
+            padding: 25px;
+            background: var(--cream-white);
+            border-radius: 10px;
+            border: 3px solid var(--farm-green);
+        }
+        
+        .pillar-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--farm-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .value-card {
+            padding: 25px;
+            background: var(--cream-white);
+            border-radius: 10px;
+            border-left: 5px solid var(--heritage-red);
+        }
+        
+        .cta-section {
+            background: var(--heritage-red);
+            color: white;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .cta-section h2 {
+            color: var(--cream-white);
+            margin-bottom: 20px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--cream-white);
+            border: 2px solid var(--cream-white);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--cream-white);
+            color: var(--heritage-red);
+        }
+        
+        @media (max-width: 768px) {
+            .mission-pillars {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="top-left">
+                        <span>Supporting American farmers since 2024</span>
+                    </div>
+                    <div class="top-right">
+                        <span>admin@harvesteggs.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <a href="index.html" class="logo-link">
+                            <h1 class="logo">Harvest Eggs</h1>
+                            <div class="tagline">Back to the Basics of True Farm Fresh</div>
+                        </a>
+                    </div>
+                    
+                    <nav class="main-nav">
+                        <a href="index.html">Home</a>
+                        <a href="marketplace_fixed.html">Marketplace</a>
+                        <a href="about_fixed.html" class="active">About</a>
+                        <a href="contact_fixed.html">Contact</a>
+                        <a href="marketplace_fixed.html" class="btn-primary">Shop Now</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="about-content">
+                <!-- Hero Section -->
+                <div class="about-section">
+                    <h1 style="color: var(--heritage-red); font-size: 3rem; text-align: center; margin-bottom: 20px;">About Harvest Eggs</h1>
+                    <p style="text-align: center; font-size: 1.3rem; color: var(--text-light);">Preserving American agricultural heritage by connecting farming families with communities that value authentic nutrition and sustainable practices.</p>
+                </div>
+
+                <!-- Mission Section -->
+                <div class="about-section">
+                    <h2>Our Mission</h2>
+                    <p>We believe in getting back to the basics where eggs are truly valued - directly from the farm to your table, cutting out the middleman. Truly knowing where your eggs come from provides that sense of true nutrition and connection to the land that feeds us.</p>
+                    
+                    <div class="mission-pillars">
+                        <div class="pillar">
+                            <div class="pillar-icon">1</div>
+                            <h3 style="color: var(--heritage-red); margin-bottom: 15px;">Authentic Connections</h3>
+                            <p style="color: var(--text-dark); font-size: 1rem;">Building genuine relationships between farmers and families, just like the traditional Saturday farmers market experience.</p>
+                        </div>
+                        
+                        <div class="pillar">
+                            <div class="pillar-icon">2</div>
+                            <h3 style="color: var(--heritage-red); margin-bottom: 15px;">Nutritional Integrity</h3>
+                            <p style="color: var(--text-dark); font-size: 1rem;">Ensuring every egg comes from farms that prioritize animal welfare, sustainable practices, and nutritional excellence.</p>
+                        </div>
+                        
+                        <div class="pillar">
+                            <div class="pillar-icon">3</div>
+                            <h3 style="color: var(--heritage-red); margin-bottom: 15px;">Agricultural Heritage</h3>
+                            <p style="color: var(--text-dark); font-size: 1rem;">Preserving traditional farming methods and supporting family farms that have been the backbone of American agriculture.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Section -->
+                <div class="about-section" style="background: var(--cream-white);">
+                    <h2>Our Story</h2>
+                    <p>Harvest Eggs was born from a simple belief: that the connection between farmer and family should be direct, transparent, and meaningful. We saw how industrial agriculture had created barriers between people and their food, and we knew there had to be a better way.</p>
+                    <p>Our platform recreates the Saturday farmers market experience in the digital age, where you can know your farmer by name, understand their practices, and trust in the quality of every egg that reaches your table.</p>
+                    <p>We're not just a marketplace - we're a movement back to the basics, where eggs are truly valued and farmers get more than 90% of the cost listed right into their pockets.</p>
+                </div>
+
+                <!-- Values Section -->
+                <div class="about-section">
+                    <h2>What We Stand For</h2>
+                    
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <h3>Transparency</h3>
+                            <p style="color: var(--text-light); font-size: 1rem;">Every farmer on our platform shares their story, practices, and commitment to quality. You know exactly where your eggs come from and how they're raised.</p>
+                        </div>
+                        
+                        <div class="value-card" style="border-left-color: var(--farm-green);">
+                            <h3>Fair Compensation</h3>
+                            <p style="color: var(--text-light); font-size: 1rem;">Farmers receive the vast majority of every sale, ensuring they can continue their sustainable practices and support their families.</p>
+                        </div>
+                        
+                        <div class="value-card" style="border-left-color: var(--warm-gold);">
+                            <h3>Quality Assurance</h3>
+                            <p style="color: var(--text-light); font-size: 1rem;">We work only with farmers who meet our high standards for animal welfare, sustainable practices, and product quality.</p>
+                        </div>
+                        
+                        <div class="value-card" style="border-left-color: var(--barn-brown);">
+                            <h3>Community Building</h3>
+                            <p style="color: var(--text-light); font-size: 1rem;">We're rebuilding the connections that make communities strong - one farm, one family, one egg at a time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="cta-section">
+                    <h2>Join the Movement</h2>
+                    <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.9);">Whether you're a family seeking authentic nutrition or a farmer wanting to connect directly with your community, Harvest Eggs is your platform for meaningful food relationships.</p>
+                    <div class="cta-buttons">
+                        <a href="marketplace_fixed.html" class="btn-primary">Shop Fresh Eggs</a>
+                        <a href="contact_fixed.html" class="btn-secondary">Become a Farmer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Harvest Eggs</h4>
+                    <p>Preserving American agricultural heritage by connecting farming families with communities that value authentic nutrition and sustainable practices.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Marketplace</h4>
+                    <a href="marketplace_fixed.html">Fresh Eggs</a>
+                    <a href="all-products_fixed.html">All Products</a>
+                    <a href="marketplace_fixed.html">Hatching Eggs</a>
+                    <a href="marketplace_fixed.html">Duck Eggs</a>
+                    <a href="marketplace_fixed.html">Quail Eggs</a>
+                    <a href="marketplace_fixed.html">Shipping Supplies</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <a href="about_fixed.html">Our Mission</a>
+                    <a href="about_fixed.html">Farmer Stories</a>
+                    <a href="about_fixed.html">Sustainability</a>
+                    <a href="contact_fixed.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Quality Guarantee</a>
+                    <a href="#">Farmer Resources</a>
+                    <a href="#">Help Center</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Harvest Eggs. Supporting American agricultural heritage.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
